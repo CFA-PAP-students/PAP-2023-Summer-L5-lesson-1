@@ -147,6 +147,28 @@
     <script>
         //Part 3 Javascript sorting function
 
+        const machines = document.querySelectorAll('.machine');
+        const types = document.querySelectorAll('a');
+
+        function sort(event) {
+            console.log(event);
+            let id = event.target.id;
+            console.log("click");
+            machines.forEach( function(machine) {
+                let machineClass = machine.classList;
+                if(machineClass.contains(id)) {
+                    machine.style.display = 'block';
+                } else {
+                    machine.style.display = 'none';
+                }
+            });
+        }
+        
+        types.forEach(function(type) {
+            type.addEventListener("click", sort);
+        });
+
+
     </script>
 </body>
 
